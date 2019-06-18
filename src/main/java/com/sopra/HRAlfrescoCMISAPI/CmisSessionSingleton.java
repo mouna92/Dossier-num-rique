@@ -40,12 +40,12 @@ public class CmisSessionSingleton
   private static Map<String, String> getParameters() {
     String USERNAME = "admin";
     String PASSWORD = "admin";
-    String BROWSER_BINDING_URL = "http://10.74.30.219:8080/alfresco/api/-default-/public/cmis/versions/1.1/browser";
+    String BROWSER_BINDING_URL = "http://dlnxhradev01.ptx.fr.sopra:7080/alfresco/api/-default-/public/cmis/versions/1.1/browser";
     String REPOSITORY_ID = "-default-";
     Map<String, String> parameter = new HashMap();
     parameter.put("org.apache.chemistry.opencmis.user", "admin");
-    parameter.put("org.apache.chemistry.opencmis.password", "admin");
-    parameter.put("org.apache.chemistry.opencmis.binding.browser.url", "http://10.74.30.219:8080/alfresco/api/-default-/public/cmis/versions/1.1/browser");
+    parameter.put("org.apache.chemistry.opencmis.password", "alfresco");
+    parameter.put("org.apache.chemistry.opencmis.binding.browser.url", "http://dlnxhradev01.ptx.fr.sopra:7080/alfresco/api/-default-/public/cmis/versions/1.1/browser");
     parameter.put("org.apache.chemistry.opencmis.binding.spi.type", BindingType.BROWSER.value());
     parameter.put("org.apache.chemistry.opencmis.session.repository.id", "-default-");
     parameter.put("org.apache.chemistry.opencmis.binding.webservices.jaxws.impl", "cxf");
