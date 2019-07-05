@@ -1,0 +1,5 @@
+<Parameters>
+<user>admin</user>
+<password>alfresco</password>
+<url>http://dlnxhradev01.ptx.fr.sopra:7080/alfresco/api/-default-/public/cmis/versions/1.1/browser</url>
+</Parameters>

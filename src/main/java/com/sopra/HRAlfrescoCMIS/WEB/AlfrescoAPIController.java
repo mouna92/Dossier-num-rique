@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.websocket.server.PathParam;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 
 import org.apache.chemistry.opencmis.client.api.CmisObject;
 import org.apache.chemistry.opencmis.client.api.Session;
@@ -42,7 +43,7 @@ public class AlfrescoAPIController
   }
   
   @GetMapping("connection")
-  public void TestConnection() { Session session = CmisSessionSingleton.getInstance(); }
+  public void TestConnection() throws ParserConfigurationException, SAXException, IOException { Session session = CmisSessionSingleton.getInstance(); }
   
   @RequestMapping(value={"/"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
   public String test2() {
@@ -84,6 +85,6 @@ public void  visualize( @PathParam("pj ")String pj, @PathParam("ext") String ext
 	  return DownloadTest.ParseXMLPOURZIP(); }
 
 @GetMapping("sendfile")
-public void sendfilefromhr(@PathParam("pj ")String pj, @PathParam("ext") String ext) throws ParserConfigurationException, SAXException, IOException { 
-	 download.sendFile(pj, ext); }
+public String sendfilefromhr(@PathParam("pj ")String pj, @PathParam("ext") String ext, @PathParam("matcle") String matcle) throws ParserConfigurationException, SAXException, IOException, TransformerException { 
+ return	 download.sendFile(pj, ext, matcle); }
 }
